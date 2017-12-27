@@ -1,0 +1,95 @@
+// ----- Header & Title ----- //
+#page-header {
+	background: $dark-blue;
+	border-top: 1px solid $white;
+	color: $white;
+	font-family: $header-footer-font-stack;
+	height: 12rem;
+	line-height: 1;
+	z-index: 2;
+
+	a {
+		color: $white;
+	}
+
+	h1 {
+		display: flex;
+		justify-content: space-between;
+		line-height: 2.4rem;
+	}
+
+	.header-title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 2.5rem 3rem 2.5rem 3rem;
+		>a {
+			align-items: baseline;
+			display: flex;
+		}
+		.name, .job {
+			display: inline-block;
+		}
+		.name {
+			font-size: 1.6rem;
+		}
+		.job {
+			font-size: 1.4rem;
+			margin-left: 1rem;
+		}
+		@include bp(sm) {
+			.name {
+				font-size: 2.4rem;
+			}
+			.job {
+				font-size: 1.4rem;
+			}
+			font-size: 2rem;
+		}
+		@include bp(md) {
+			font-size: 2.4rem;
+		}
+		@include bp(lg) {
+			font-size: 3rem;
+			.name {
+				font-size: 3.4rem;
+			}
+			.job {
+				font-size: 2.4rem;
+			}
+		}
+
+		a:hover {
+			text-decoration: none;
+		}
+
+		h1 {
+			font-size: inherit;
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	.hamburger-menu {
+		cursor: pointer;
+		float: right;
+		padding-right: 1rem;
+		@include bp(sm) {
+			display: none;
+		}
+	}
+
+	.google-custom-search {
+		display: none;
+		@include bp(md) {
+			display: block;
+			max-width: 28rem;
+		}
+		@include bp(lg) {
+			max-width: 30rem;
+		}
+
+	}
+}
+
+

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en-US">
+{% include head.html %}
+<body itemscope itemtype="http://schema.org/WebPage">
+	{% include facebook-sdk.html %}
+	<div id="page-header"></div>
+	<div class="page-container wg">
+		<aside id="page-profile" class="col-md-4-16 col-lg-3-16">
+			{% include profile.html %}
+		</aside>
+		<main class="page-main col-md-12-16 col-lg-13-16">
+			{% if page.url == "/" %}
+				{% include home.html %}
+			{% elsif page.islistpage == true %}
+				{% include list-page.html %}
+			{% else %}
+				{% include content-page.html %}
+			{% endif %}
+		</main>
+	</div>
+	{% include footer.html %}
+	{% include scripts.html %}
+</body>
+</html>

@@ -1,0 +1,118 @@
+{%- assign apple_icon_sizes =  "57,72,76,114,120,144,152,180" | split:"," -%}
+{%- assign url = site.url | append: page.permalink -%}
+{%- assign image_url = site.url | append: page.image.url -%}
+{%- assign twitter = site.social.twitter -%}
+{%- assign facebook = site.social.facebook -%}
+{%- if page.url == "/" -%}
+	{%- assign title = site.title -%}
+{%- else -%}
+	{%- assign title = page.title | append:" | " | append: site.title -%}
+{%- endif -%}
+
+<head>
+
+	<!-- DNS Prefetch -->
+	<meta http-equiv="x-dns-prefetch-control" content="on">
+	<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
+	<!-- General Metadata -->
+	<title>{{ title }}</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="{{ page.description }}">
+	<meta name="keywords" content="{{ page.keywords }}">
+	<meta name="robots" content="index, follow">
+	<link rel="canonical" href="{{ url }}">
+	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/index.xml">
+
+	<!-- Open Graph Metadata -->
+	<meta property="og:locale" content="{{ site.locale }}" />
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="{{ title }}">
+	<meta property="og:url" content="{{ url }}">
+	<meta property="og:site_name" content="{{ site.title }}" />
+	<meta property="og:image" content="{{ image_url }}">
+	<meta property="og:description" content="{{ page.description }}">
+	{{ if facebook }}
+	<meta property="fb:app_id" content="{{ facebook.appid }}" />
+	<meta property="fb:admins" content="{{ facebook.admins }}" />
+	{{ end }}{{ if twitter }}
+	<!-- Twitter Metadata -->
+	<meta name="twitter:card" content="{{ twitter.cardtype }}">
+	<meta name="twitter:site" content="{{ twitter.username }}">
+	<meta name="twitter:creator" content="{{ twitter.username }}">
+	<meta name="twitter:url" content="{{ url }}">
+	<link rel="me" href="https://twitter.com/{{ twitter.username }}">
+	{{ end }}
+	<!-- Google metadata -->
+	<meta name="google-site-verification" content="79WFC1AAO_g6X17NBDa1J0yiQJlas4v8hS69Ihw8M7Q" />
+
+	<!-- Microsoft metadata -->
+	<meta name="msvalidate.01" content="74F5AA76B53AEFD6E86FE91470A50E0B" />
+
+
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#26547c">
+<meta name="msapplication-TileColor" content="#26547c">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="theme-color" content="#dee5ee">
+
+
+	<!-- Icons -->
+	<link rel="shortcut icon" href="{{ .site.url }}favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="{{ .site.url }}apple-touch-icon.png" />
+	{%- for size in apple_icon_sizes -%}
+	<link rel="apple-touch-icon" sizes="{{ size }}x{{ size }}" href="/apple-touch-icon-{{ size }}x{{ size }}.png" />
+	{% endfor %}{{ if .RSSLink }}
+	{{ "<!-- RSS -->" | safeHTML }}
+	<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ site.title }}" />
+	<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ site.title }}" />
+	{{ end }}
+	<!-- CSS -->
+	<link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}/css/main.css">
+
+	<!-- Google Custom Search reference for Sitelinks Searchbox -->
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "WebSite",
+			"url": "http://www.ericcarlisle.com/",
+			"potentialAction": {
+				"@type": "SearchAction",
+				"target": "http://www.ericcarlisle.com/search?q={search_term_string}",
+				"query-input": "required name=search_term_string"
+			}
+		}
+	</script>
+
+	<!-- Breadcrumbs -->
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "BreadcrumbList",
+			"itemListElement": [{
+				"@type": "ListItem",
+				"position": 1,
+				"item": {
+					"@id": "{{ site.url }}{{ .Section }}",
+					"name": "{{ humanize .Section }}"
+				}
+			}]
+		}
+	</script>
+
+	<!-- Organization -->
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "Organization",
+			"url": "{{ site.url }}",
+			"logo": "{{ site.url }}/images/global/logo.png"
+		}
+	</script>
+</head>

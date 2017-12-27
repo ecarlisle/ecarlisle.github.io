@@ -1,0 +1,48 @@
+	<div class="article-subtitle">
+		<ul class="meta">
+			<li>
+				{% if item.category == posts %}
+					Blog Post
+				{% else if item.category == presentations %}
+					Presentation
+				{% endif %}
+			</li>
+			<li>&middot;</li>
+			<li>
+				<time>{{ item.date | date: "%B %-d, %Y" }}</time>
+				  <meta itemprop="datePublished" content="{{ .PublishDate.Format .Site.Params.dateformat.iso8601 }}"/>
+				  <meta itemprop="dateModified" content="{{ .PublishDate.Format .Site.Params.dateformat.iso8601 }}"/>
+			</li>
+			<li>&middot;</li>
+			<li>
+				<span class="iblock" itemprop="author">{{ item.author }}</span>
+				<span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+					<meta name="width" content="{{ $.Param "image.width" }}" />
+					<meta name="height" content="{{ $.Param "image.height" }}" />
+					<meta itemprop="url" content="{{ .Site.BaseURL }}{{ $.Param "image.url" }}" />
+				</span>
+			</li>
+		</ul>
+		<!-- AddToAny BEGIN -->
+		<div class="a2a_kit a2a_default_style">
+			<a class="a2a_button_twitter"></a>
+			<a class="a2a_button_linkedin"></a>
+			<a class="a2a_button_facebook"></a>
+			<a class="a2a_button_google_plus"></a>
+			<!-- <a class="a2a_button_copy_link"></a> -->
+			<!-- <a class="a2a_dd" href="https://www.addtoany.com/share"></a> -->
+		</div>
+		{% if jekyll.environment == 'production' %}
+		<script async src="https://static.addtoany.com/menu/page.js"></script>
+ 		{% endif %}
+ 		{{ jekyll.environment }}
+		<!-- AddToAny END -->
+	</div>
+	<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+		<meta itemprop="name" content="{{ $.Site.Params.organization.name }}" />
+		<span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+			<meta itemprop="url" content="{{ .Site.BaseURL }}{{ $.Site.Params.organization.logo.src }}" />
+			<meta itemprop="width" content="{{ $.Site.Params.organization.logo.width }}" />
+			<meta itemprop="height" content="{{ $.Site.Params.organization.logo.height }}" />
+		</span>
+	</span>

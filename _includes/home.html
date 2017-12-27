@@ -1,0 +1,19 @@
+<article class="hero">
+	{{ content }}
+</article>
+
+<h2 class="list-title tmar4">Latest Posts</h2>
+<ul>
+{% assign pages = site.categories["posts"] | sort: 'date' | reverse %}
+{% for item in pages limit:3 %}
+	{% include summary.html %}
+{% endfor %}
+</ul>
+
+<h2 class="list-title tmar4">Latest Presentation</h2>
+<ul>
+{% assign pages = site.categories["presentations"] | sort: 'date' | reverse %}
+{% for item in pages limit:1 %}
+	{% include summary.html %}
+{% endfor %}
+</ul>

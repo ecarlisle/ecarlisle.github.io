@@ -1,0 +1,75 @@
+# Use 'bundle exec jekyll serve' upon making changes.
+
+title: "Eric Carlisle : UI Developer, UX Designer"
+email: eric@ericcarlisle.com
+description: >-
+  Eric Carlisle is a UI Developer and UX Designer. His motto is KISS,
+  to Keep It Stunningly Simple.
+keywords:
+  - Eric Carlisle
+url: https://www.ericcarlisle.com
+baseurl: /
+repository: ecarlisle/ecarlisle.github.io
+permalink: /:categories/:year/:month/:day/:slug
+excerpt_separator: <!--more-->
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+categories:
+  - posts
+  - presentations
+  - contact
+
+include:
+  - _pages
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - webpack.config.js
+  - package.json
+  - package-json.lock
+
+# Custom
+keywords: ["Eric Carlisle", "UI Developer", "UX Designer", "User Interface", "User Experience"]
+locale: en_US
+dateformat:
+  human: Mon, Jan 2, 2006
+  iso8601: 2006-01-02T15:04:05-07:00
+headertitle:
+  title: Eric Carlisle
+  subtitle: UI Developer, UX Designer
+profile:
+  image: img/global/eric-carlisle-400x400.png
+  name: Eric Carlisle
+  title: UI Developer, UX Designer
+organization:
+  name: Eric Carlisle Consulting
+  logo:
+    src: img/eric-carlisle-consulting-logo.png
+    height: 60
+    width: 600
+social:
+  facebook:
+    admins: 5412120
+    appid: 372474503176455
+  twitter:
+    username: "@eric_carlisle"
+    cardtype: summary
+  instagram:
+    username: ericcarlisle
+  github:
+    username: ecarlisle
+  medium:
+    username: eric_carlisle
+  slideshare:
+    username: ericcarlisle
