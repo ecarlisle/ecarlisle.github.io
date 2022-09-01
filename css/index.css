@@ -100,10 +100,12 @@ footer.primary .wrapper {
 aside {
   padding: 1.5rem 1rem 0;
 }
-aside .headshot {
-  border-radius: 1rem;
+aside picture {
   display: block;
-  margin: 0 auto;
+  text-align: center;
+}
+aside picture img {
+  border-radius: 1rem;
 }
 aside figcaption {
   display: block;
