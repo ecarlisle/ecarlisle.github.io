@@ -70,11 +70,6 @@ footer.primary {
   background: linear-gradient(to right, #2563EB, #1E40AF);
   color: #ffffff;
   padding: 1rem 1.25rem;
-  /*
-  @include mq('lg') {
-    padding: map-get($spacing, md);
-  }
-  */
 }
 footer.primary a {
   text-decoration: underline;
@@ -100,12 +95,10 @@ footer.primary .wrapper {
 aside {
   padding: 1.5rem 1rem 0;
 }
-aside picture {
-  display: block;
-  text-align: center;
-}
-aside picture img {
+aside figure img {
   border-radius: 1rem;
+  display: block;
+  margin: 0 auto;
 }
 aside figcaption {
   display: block;
