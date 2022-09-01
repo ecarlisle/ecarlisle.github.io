@@ -1,0 +1,85 @@
+@use 'sass:map';
+
+$breakpoints: (
+  md: 25rem, // 400px
+  lg: 48rem, // 768px
+  xl: 64rem, // 1024px
+);
+
+$spacing: (
+  3xs: 0.125rem, // 2px
+  2xs: 0.25rem,  // 4px
+  xs:	0.5rem,    // 8px
+  sm:	0.75rem,	 // 12px
+  md: 1rem,	     // 16px (baseline)
+  lg: 1.25rem,   // 20px
+  xl: 1.5rem,    // 24px
+  2xl: 2rem,     // 32px
+  3xl: 2.5rem,   // 40px
+);
+
+$font-size: (
+  sm:	0.75rem,  // 12px
+  md: 1rem,     // 16px (baseline)
+  lg: 1.125rem, // 20px 
+  xl: 1.5rem,   // 24px
+  2xl: 2rem,    // 32px
+  3xl: 2.5rem,  // 48px
+);
+
+$font-weight: (
+  th: 100,
+  xl: 200,
+  lt: 300,
+  rg:	400,
+  md: 500,
+  sb: 600,
+  bd: 700,
+  xb: 800,
+  bl: 900,
+);
+
+$line-height: (
+  xs: 1rem,
+  sm: 1.25rem,
+  md: 1.5rem, // 24px (main content baseline)
+  lg: 2rem,
+);
+
+$font-families: (
+  headings: ('Exo 2', Serif),
+  content: ('Mulish', Sans-Serif),
+);
+
+$colors: (
+  black: #333333,
+  white: #ffffff,
+  neutral: (
+    50: #fafafa,
+    100: #f5f5f5,
+    200: #e5e5e5,
+    300: #d4d4d4,
+    400: #a3a3a3,
+    500: #737373,
+    600: #525252,
+    700: #404040,
+    800: #262626,
+    900: #171717,
+  ),
+  blue: (
+    50: #EFF6FF,
+    100: #DBEAFE,
+    200: #BFDBFE,
+    300: #93C5FD,
+    400: #60A5FA,
+    500: #3B82F6,
+    600: #2563EB,
+    700: #1D4ED8,
+    800: #1E40AF,
+    900: #1E3A8A,
+  ),
+);
+
+$content-font: #{map-get($font-size, lg)} / #{map-get($line-height, lg)} map-get($font-families, 'content');
+$heading-font: map-get($font-weight, rg) #{map-get($font-size, md)} / #{map-get($line-height, md)} map-get($font-families, 'headings');
+$max-content-width: 80rem;

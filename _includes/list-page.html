@@ -1,7 +1,0 @@
-<h1 class="list-title">{{ page.category | capitalize }}</h1>
-<ul>
-{% assign pages = site.categories[page.category] | sort: 'date' | reverse %}
-{% for item in pages %}
-	{% include summary.html %}
-{% endfor %}
-</ul>

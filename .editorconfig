@@ -1,16 +1,12 @@
 root = true
 
 [*]
-
-# Change these settings to your own preference
-indent_style = tab
+indent_style = space
 indent_size = 2
-
-# We recommend you to keep these unchanged
 end_of_line = lf
-charset = utf-8
+insert_final_newline = false
 trim_trailing_whitespace = true
-insert_final_newline = true
+charset = utf-8
 
-# editorconfig-tools is unable to ignore longs strings or urls
-max_line_length = null
+[*.js*]
+insert_final_newline = true

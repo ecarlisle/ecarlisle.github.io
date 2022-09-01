@@ -1,0 +1,187 @@
+@use 'sass:map';
+@use './reset.scss';
+@use './utility.scss';
+@use './ds.scss' as *;
+@use 'mixins' as *;
+
+body {
+  font: $content-font;
+}
+
+
+.wrapper {
+  margin: 0 auto;
+  max-width: $max-content-width;
+}
+
+@include mq('lg') {
+  .main-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+header.primary {
+
+  background: map-get($colors, blue, 600); /* fallback for old browsers */
+  background: linear-gradient(to right, map-get($colors, blue, 600), map-get($colors, blue, 800));
+  color: map-get($colors, white);
+
+  @include mq('lg') {
+    padding: map-get($spacing, xl);
+
+    .wrapper {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+footer.primary {
+  background: map-get($colors, blue, 800); /* fallback for old browsers */
+  background: linear-gradient(to right, map-get($colors, blue, 600), map-get($colors, blue, 800));
+  color: map-get($colors, white);
+  padding: map-get($spacing, md) map-get($spacing, lg);
+  a {
+    text-decoration: underline;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /*
+  @include mq('lg') {
+    padding: map-get($spacing, md);
+  }
+  */
+}
+
+.site-title {
+  display: block;
+  font: $heading-font;
+  font-size: map-get($font-size, 3xl);
+  padding: map-get($spacing, lg);
+  @include mq('lg') {
+    padding: 0;
+    font-size: map-get($font-size, 3xl);
+  }
+}
+
+aside {
+  padding: map-get($spacing, xl) map-get($spacing, md) 0;
+  .headshot {
+    border-radius: 1rem; // TODO DS token
+    display: block;
+    margin: 0 auto;
+  }
+  figcaption {
+    display: block;
+    font-size: map-get($font-size, md);
+    margin: map-get($spacing, sm) 0;
+    text-align: center;
+  }
+  .social-icons {
+    display: flex;
+    justify-content: space-around;
+    max-width: 300px;
+    margin: 0 auto;
+    svg {
+      fill: map-get($colors, blue, 600);
+    }
+  }
+}
+
+main {
+  background: white;
+  padding: map-get($spacing, sm) map-get($spacing, md);
+  @include mq('lg') {
+    font-size: map-get($font-size, lg);
+  }
+}
+
+nav.primary {
+  border: solid 1px white;
+  border-width: 1px 0 0 0;
+  padding: map-get($spacing, sm) map-get($spacing, lg);
+
+  @include mq('lg') {
+    border: 0;
+    padding: 0;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    @include mq('lg') {
+      justify-content: flex-end;
+    }
+  
+
+    
+    li {
+      a {
+        display: inline-block;
+        &:hover {
+          text-decoration: underline;
+        }
+        @include mq('lg') {
+          font-size: map-get($font-size, lg);
+          margin: 0 0 0 map-get($spacing, 2xl);
+        }
+      }
+  
+    }
+  }
+}
+
+
+h1 {
+  font: $heading-font;
+  font-size: map-get($font-size, 2xl);
+  line-height: 1.25em;
+  margin: map-get($spacing, sm) 0 map-get($spacing, sm);
+  @include mq('lg') {
+    font-size: map-get($font-size, 3xl);
+  }
+}
+
+
+h2 {
+  font: $heading-font;
+  font-size: map-get($font-size, xl);
+  line-height: 1.25em;
+  margin: map-get($spacing, sm) 0 map-get($spacing, sm);
+  @include mq('lg') {
+    font-size: map-get($font-size, 2xl);
+  }
+}
+
+article {
+  border: solid 1px #ccc;
+  border-width: 0 0 1px 0;
+  margin: 0 0 map-get($spacing, xl) 0;
+  padding: 0 0 map-get($spacing, lg) 0;
+  
+  time {
+    font: $heading-font;
+  }
+
+  .tags ul li {
+    font: $heading-font;
+    font-size: map-get($font-size, md);
+    padding: map-get($spacing, md) map-get($spacing, md) 0 0;
+  }
+}
+
+hr {
+  border: solid 1px map-get($colors, neutral, 300);
+  border-width: 0 0 1px 0;
+  margin: 0 0 map-get($spacing, md) 0;
+}
+
+p {
+  margin: 0 0 map-get($spacing, md) 0;
+}

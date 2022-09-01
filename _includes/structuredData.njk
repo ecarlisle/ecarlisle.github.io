@@ -1,0 +1,48 @@
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "{{ site.url }}",
+    "name": "{{ site.name }}",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{{ site.url }}search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "email": "website@ericcarlisle.com",
+    "description": "UI Developer, UX Strategist, Speaker, Mentor, Maker",
+    "name": "Eric Carlisle",
+    "image": "{{site.url}}{{site.image}}",
+    "alumniOf": [
+      {
+      "@type": "CollegeOrUniversity",
+      "name": "University of South Carolina",
+      "sameAs": "https://sc.edu/"
+      },
+      {
+      "@type": "CollegeOrUniversity",
+      "name": "South Carolina Honors College",
+      "sameAs": "https://sc.edu/study/colleges_schools/honors_college/"
+      },
+      {
+      "@type": "CollegeOrUniversity",
+      "name": "Johns Hopkins Carey Business School",
+      "sameAs": "https://carey.jhu.edu/"
+      }
+    ],
+    "url": "http://www.ericcarlisle.com",
+    "sameAs" : [ 
+      "https://www.facebook.com/eric.carlisle",
+      "https://twitter.com/eric_carlisle",
+      "https://www.linkedin.com/in/ericcarlisle/",
+      "https://github.com/ecarlisle",
+      "https://www.instagram.com/ericcarlisle/"
+    ]
+  }
+</script>

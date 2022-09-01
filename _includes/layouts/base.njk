@@ -1,0 +1,127 @@
+<!-- template variables -->
+{%- set hostname -%}
+  {%- if site.environment == 'production' -%}
+    {{site.url}}
+  {%- else -%}
+    http://localhost:8080
+  {%- endif -%}
+{%- endset -%}
+
+<!DOCTYPE html>
+<html lang="{{site.lang}}">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Title & Description -->
+  <title>{{ title }}</title>
+  <meta name="description" content="{{description}}">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6DZF30BMQY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6DZF30BMQY');
+  </script>
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{hostname}}" />
+
+  <!-- fb: meta -->
+  <meta property="fb:app_id" content="{{site.facebookAppId}}" />
+  <meta property="fb:pages" content="{{site.facebookPageId}}" />
+
+  <!-- Open Graph meta -->
+  <meta property="og:site_name" content="{{site.name}}">
+  <meta property="og:type" content="{{og_type}}" />
+  <meta property="og:title" content="{{title}}" />
+  <meta property="og:url" content="{{site.url}}{{permalink | url }}" />
+  <meta property="og:locale" content="{{site.locale}}" />
+
+  <meta property="og:image" content="{{og_image.url}}" />
+  <meta property="og:image:type" content="{{og_image.type}}" />
+  <meta property="og:image:width" content="{{og_image.width}}" />
+  <meta property="og:image:height" content="{{og_image.height}}" />
+  <meta property="og:image:alt" content="{{og_image.alt}}" />
+
+  <!-- Twitter meta -->
+  <meta name="twitter:card" content="{{twitter_card_type}}" />
+  <meta name="twitter:title" content="{{title}}" />
+  <meta name="twitter:description" content="{{description}}" />
+  <meta name="twitter:image" content="{{og_image.url}}" />
+  <meta name="twitter:site" content="{{site.social.Twitter.username}}" />
+  <meta name="twitter:image:alt" content="{{og_image.alt}}">
+
+  <!-- Stylesheet -->
+  {%- if site.environment == 'production' -%}
+  {% set css %}
+  {% include "../css/index.css" %}
+  {% endset %}
+  <style>{{ css | safe }}</style>
+  {%- else -%}
+  <link rel="stylesheet" href="css/index.css">
+  {%- endif -%}
+
+  <!-- Structured Data -->
+  {%- include "../structuredData.njk" -%}
+</head>
+<body>
+  <header class="primary">
+    <div class="wrapper">
+      <a class="site-title" href="/">Eric Carlisle</a>
+      <!-- Replace with nav -->
+      <div></div>
+    </div>
+  </header>
+  <div class="wrapper main-content-wrapper">
+    <aside>
+      <figure>
+        <picture class="headshot">
+          <source srcset="/img/eric-carlisle-600x600.webp 2x,
+                          /img/eric-carlisle-300x300.webp 1x"  
+                  type="image/webp" />
+          <source srcset="/img/eric-carlisle-600x600.png 2x,
+                          /img/eric-carlisle-300x300.png 1x"  
+                  type="image/png" />
+          <img src="/img/eric-carlisle-300x300.png"
+               width="300" 
+               height="300" 
+               alt="Eric Carlisle - Profile Image" />
+        </picture>
+        <figcaption>
+          <strong>Eric Carlisle</strong> : UI Developer, UX Strategist
+        </figcaption>
+      </figure>
+      <div class="social-icons">
+      {%- for name, item in site.social -%}
+        <a href="{{item.url}}" alt="Eric's {{item.name}} Profile">
+          {{item.icon | safe }}
+        </a>
+      {%- endfor -%}
+      </div>
+    </aside>
+    <main>
+      {{ content | safe }}
+    </main>
+  </div>
+  <footer class="primary">
+    <div class="wrapper">
+      <span>
+        Built with <a href="https://11ty.dev">11ty</a>
+      </span>
+      <span>
+        © Copyright 2022 Eric Carlisle
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,9 +1,0 @@
-{% if jekyll.environment == 'development' %}
-	<script crossorigin src="/jsdev/react.development.js"></script>
-	<script crossorigin src="/jsdev/react-dom.development.js"></script>
-{% elsif jekyll.environment == 'production' %}
-	<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-	<!-- TODO: GOOGLE ANALYTICS -->
-{% endif %}
-<script src="/js/reactInit.js"></script>
