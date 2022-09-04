@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>32x32</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="32x32">
+            <rect id="Rectangle" fill="#2563EB" x="0" y="0" width="32" height="32"></rect>
+            <text id="EC" font-family="Exo2-Medium, Exo 2" font-size="24" font-weight="400" fill="#FFFFFF">
+                <tspan x="2.464" y="24">EC</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
