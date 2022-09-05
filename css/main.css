@@ -93,7 +93,7 @@ footer.primary .wrapper {
 }
 
 aside {
-  padding: 1.5rem 1rem 0;
+  padding: 1.5rem 1rem;
 }
 aside figure img {
   border-radius: 1rem;
@@ -146,6 +146,9 @@ nav.primary ul {
     justify-content: flex-end;
   }
 }
+nav.primary ul li.active a {
+  text-decoration: underline;
+}
 nav.primary ul li a {
   display: inline-block;
 }
@@ -163,7 +166,7 @@ h1 {
   font: 400 1rem/1.5rem "Exo 2", Serif;
   font-size: 2rem;
   line-height: 1.25em;
-  margin: 0.75rem 0 0.75rem;
+  margin: 0.75rem 0 1.25rem;
 }
 @media all and (min-width: 48rem) {
   h1 {

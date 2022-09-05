@@ -1,2 +1,4 @@
+Sitemap: https://www.ericcarlisle.com/sitemap.xml
+
 User-Agent: *
 Allow: /
