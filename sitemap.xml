@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
     <loc>https://www.ericcarlisle.com/</loc>
-      <lastmod>2022-05-31T01:01:13.399Z</lastmod>
-  </url></urlset>
+    <lastmod>2021-01-09T01:01:13.399Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.ericcarlisle.com/3d-prints/250mm-trading-card-box/</loc>
+    <lastmod>2021-01-09T01:01:13.399Z</lastmod>
+  </url>
+</urlset>
